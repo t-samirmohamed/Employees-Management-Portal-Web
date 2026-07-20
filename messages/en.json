@@ -1,0 +1,144 @@
+{
+  "common": {
+    "appName": "Employee Management",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "submit": "Submit",
+    "actions": "Actions",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "close": "Close"
+  },
+  "nav": {
+    "employees": "Employees",
+    "statistics": "Statistics",
+    "logout": "Log out",
+    "login": "Log in",
+    "signup": "Sign up"
+  },
+  "auth": {
+    "login": {
+      "title": "Log in",
+      "subtitle": "Enter your credentials to access your account",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Log in",
+      "invalidCredentials": "Invalid email or password",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up"
+    },
+    "signup": {
+      "title": "Create an account",
+      "subtitle": "Enter your details to create a new account",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "gender": "Gender",
+      "submit": "Create account",
+      "passwordMismatch": "Passwords do not match",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Log in",
+      "serverErrors": {
+        "DuplicateUserName": "This username is already taken",
+        "DuplicateEmail": "This email is already registered",
+        "InvalidEmail": "The email format is invalid",
+        "PasswordTooShort": "Password is too short",
+        "PasswordRequiresDigit": "Password must contain at least one digit",
+        "PasswordRequiresLower": "Password must contain at least one lowercase letter",
+        "PasswordRequiresUpper": "Password must contain at least one uppercase letter",
+        "PasswordRequiresNonAlphanumeric": "Password must contain at least one special character",
+        "PasswordRequiresUniqueChars": "Password does not contain enough unique characters",
+        "generic": "Something went wrong while creating your account"
+      }
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "passwordUppercase": "Password must contain at least one uppercase letter",
+      "passwordLowercase": "Password must contain at least one lowercase letter",
+      "passwordDigit": "Password must contain at least one digit",
+      "passwordSpecialChar": "Password must contain at least one special character"
+    }
+  },
+  "employees": {
+    "list": {
+      "title": "Employees",
+      "createNew": "Add employee",
+      "noResults": "No employees match the current filters",
+      "filters": {
+        "gender": "Gender",
+        "status": "Status",
+        "attendanceStatus": "Attendance",
+        "allGenders": "All genders",
+        "allStatuses": "All statuses",
+        "allAttendanceStatuses": "All attendance statuses",
+        "clear": "Clear filters"
+      }
+    },
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "gender": "Gender",
+      "status": "Status",
+      "attendanceStatus": "Attendance",
+      "createdAt": "Created at"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "view": "View",
+      "confirmDeactivateTitle": "Deactivate employee",
+      "confirmDeactivateDescription": "Are you sure you want to deactivate this employee?",
+      "confirmActivateTitle": "Activate employee",
+      "confirmActivateDescription": "Are you sure you want to activate this employee?"
+    },
+    "create": {
+      "title": "Add employee",
+      "submit": "Create",
+      "success": "Employee created successfully"
+    },
+    "detail": {
+      "title": "Employee details",
+      "back": "Back to list",
+      "notFound": "Employee not found"
+    },
+    "enums": {
+      "gender": {
+        "M": "Male",
+        "F": "Female"
+      },
+      "status": {
+        "Active": "Active",
+        "Inactive": "Inactive"
+      },
+      "attendanceStatus": {
+        "InOffice": "In office",
+        "Absent": "Absent",
+        "OnVacation": "On vacation",
+        "OutOfOffice": "Out of office"
+      }
+    }
+  },
+  "statistics": {
+    "title": "Statistics",
+    "totalEmployees": "Total employees",
+    "byGender": "By gender",
+    "byStatus": "By status",
+    "byAttendanceStatus": "By attendance"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "sessionExpired": "Your session has expired. Please log in again.",
+    "notFound": "The requested item was not found."
+  }
+}

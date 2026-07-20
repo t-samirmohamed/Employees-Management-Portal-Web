@@ -1,0 +1,144 @@
+{
+  "common": {
+    "appName": "إدارة الموظفين",
+    "loading": "جارٍ التحميل...",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "back": "رجوع",
+    "submit": "إرسال",
+    "actions": "الإجراءات",
+    "language": "اللغة",
+    "theme": "المظهر",
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام",
+    "close": "إغلاق"
+  },
+  "nav": {
+    "employees": "الموظفون",
+    "statistics": "الإحصائيات",
+    "logout": "تسجيل الخروج",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "subtitle": "أدخل بياناتك للوصول إلى حسابك",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "submit": "تسجيل الدخول",
+      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+      "noAccount": "ليس لديك حساب؟",
+      "signupLink": "إنشاء حساب جديد"
+    },
+    "signup": {
+      "title": "إنشاء حساب",
+      "subtitle": "أدخل بياناتك لإنشاء حساب جديد",
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "gender": "الجنس",
+      "submit": "إنشاء الحساب",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين",
+      "hasAccount": "لديك حساب بالفعل؟",
+      "loginLink": "تسجيل الدخول",
+      "serverErrors": {
+        "DuplicateUserName": "اسم المستخدم هذا مستخدم بالفعل",
+        "DuplicateEmail": "هذا البريد الإلكتروني مسجّل بالفعل",
+        "InvalidEmail": "صيغة البريد الإلكتروني غير صحيحة",
+        "PasswordTooShort": "كلمة المرور قصيرة جدًا",
+        "PasswordRequiresDigit": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+        "PasswordRequiresLower": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+        "PasswordRequiresUpper": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+        "PasswordRequiresNonAlphanumeric": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+        "PasswordRequiresUniqueChars": "كلمة المرور لا تحتوي على عدد كافٍ من الأحرف الفريدة",
+        "generic": "حدث خطأ أثناء إنشاء الحساب"
+      }
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "يرجى إدخال بريد إلكتروني صحيح",
+      "passwordMinLength": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+      "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+      "passwordLowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+      "passwordDigit": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+      "passwordSpecialChar": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل"
+    }
+  },
+  "employees": {
+    "list": {
+      "title": "الموظفون",
+      "createNew": "إضافة موظف",
+      "noResults": "لا يوجد موظفون مطابقون للفلاتر الحالية",
+      "filters": {
+        "gender": "الجنس",
+        "status": "الحالة",
+        "attendanceStatus": "حالة الحضور",
+        "allGenders": "جميع الأجناس",
+        "allStatuses": "جميع الحالات",
+        "allAttendanceStatuses": "جميع حالات الحضور",
+        "clear": "مسح الفلاتر"
+      }
+    },
+    "fields": {
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "email": "البريد الإلكتروني",
+      "gender": "الجنس",
+      "status": "الحالة",
+      "attendanceStatus": "حالة الحضور",
+      "createdAt": "تاريخ الإنشاء"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "إلغاء التفعيل",
+      "view": "عرض",
+      "confirmDeactivateTitle": "إلغاء تفعيل الموظف",
+      "confirmDeactivateDescription": "هل أنت متأكد من رغبتك في إلغاء تفعيل هذا الموظف؟",
+      "confirmActivateTitle": "تفعيل الموظف",
+      "confirmActivateDescription": "هل أنت متأكد من رغبتك في تفعيل هذا الموظف؟"
+    },
+    "create": {
+      "title": "إضافة موظف جديد",
+      "submit": "إنشاء",
+      "success": "تم إنشاء الموظف بنجاح"
+    },
+    "detail": {
+      "title": "تفاصيل الموظف",
+      "back": "العودة إلى القائمة",
+      "notFound": "لم يتم العثور على الموظف"
+    },
+    "enums": {
+      "gender": {
+        "M": "ذكر",
+        "F": "أنثى"
+      },
+      "status": {
+        "Active": "نشط",
+        "Inactive": "غير نشط"
+      },
+      "attendanceStatus": {
+        "InOffice": "في المكتب",
+        "Absent": "غائب",
+        "OnVacation": "في إجازة",
+        "OutOfOffice": "خارج المكتب"
+      }
+    }
+  },
+  "statistics": {
+    "title": "الإحصائيات",
+    "totalEmployees": "إجمالي الموظفين",
+    "byGender": "حسب الجنس",
+    "byStatus": "حسب الحالة",
+    "byAttendanceStatus": "حسب حالة الحضور"
+  },
+  "errors": {
+    "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "sessionExpired": "انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى.",
+    "notFound": "العنصر المطلوب غير موجود."
+  }
+}

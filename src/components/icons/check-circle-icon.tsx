@@ -1,0 +1,35 @@
+import React from "react";
+
+interface CheckCircleIconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
+  width?: number | string;
+  height?: number | string;
+  color?: string;
+}
+
+export const CheckCircleIcon: React.FC<CheckCircleIconProps> = ({
+  className,
+  width = 20,
+  height = 20,
+  color = "currentColor",
+  ...props
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM8.823 12.14L6.058 9.373L5 10.431L8.119 13.552C8.30653 13.7395 8.56084 13.8448 8.826 13.8448C9.09116 13.8448 9.34547 13.7395 9.533 13.552L15.485 7.602L14.423 6.54L8.823 12.14Z"
+        fill={color}
+      />
+    </svg>
+  );
+};

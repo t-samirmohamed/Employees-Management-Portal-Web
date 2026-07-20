@@ -1,0 +1,8 @@
+/* Blur utilities */
+.blur-none{filter:none}
+
+/* Element blur (filter) */
+.blur-md{filter:blur(8px)}
+.blur-xl{filter:blur(16px)}
+.blur-2xl{filter:blur(24px)}
+.blur-3xl{filter:blur(32px)}
