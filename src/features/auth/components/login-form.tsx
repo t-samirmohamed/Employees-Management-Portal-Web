@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
@@ -20,18 +20,21 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { UnauthorizedError } from "@/lib/api-errors";
 import { useAuth } from "@features/auth/lib/auth-context";
 import { useLogin } from "@features/auth/hooks/use-login";
-import { loginSchema, type LoginInput } from "@features/auth/schemas/login.schema";
+import { buildLoginSchema, type LoginInput } from "@features/auth/schemas/login.schema";
 
 export function LoginForm() {
   const t = useTranslations("auth.login");
+  const tFull = useTranslations();
   const tErrors = useTranslations("errors");
   const router = useRouter();
   const { setSession } = useAuth();
   const login = useLogin();
   const [invalidCredentials, setInvalidCredentials] = useState(false);
 
+  const schema = useMemo(() => buildLoginSchema(tFull), [tFull]);
+
   const form = useForm<LoginInput>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(schema),
     defaultValues: { email: "", password: "" },
   });
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
@@ -12,19 +13,22 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useRouter } from "@/i18n/navigation";
 import { useCreateEmployee } from "@features/employees/hooks/use-create-employee";
 import {
-  createEmployeeSchema,
+  buildCreateEmployeeSchema,
   type CreateEmployeeInput,
 } from "@features/employees/schemas/create-employee.schema";
 
 export default function NewEmployeePage() {
   const t = useTranslations("employees");
+  const tFull = useTranslations();
   const tEnums = useTranslations("enums");
   const tErrors = useTranslations("errors");
   const router = useRouter();
   const createEmployee = useCreateEmployee();
 
+  const schema = useMemo(() => buildCreateEmployeeSchema(tFull), [tFull]);
+
   const form = useForm<CreateEmployeeInput>({
-    resolver: zodResolver(createEmployeeSchema),
+    resolver: zodResolver(schema),
     defaultValues: {
       firstName: "",
       lastName: "",

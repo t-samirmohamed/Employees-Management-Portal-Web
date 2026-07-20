@@ -16,9 +16,9 @@ const buildPasswordSchema = (t: (key: string) => string) =>
 export const buildSignupSchema = (t: (key: string) => string) =>
   z
     .object({
-      firstName: z.string().trim().min(1),
-      lastName: z.string().trim().min(1),
-      email: z.string().trim().min(1).email(),
+      firstName: z.string().trim().min(1, t("validation.required")),
+      lastName: z.string().trim().min(1, t("validation.required")),
+      email: z.string().trim().min(1, t("validation.required")).email(t("validation.invalidEmail")),
       gender: z.enum(["M", "F"]),
       password: buildPasswordSchema(t),
       confirmPassword: z.string(),

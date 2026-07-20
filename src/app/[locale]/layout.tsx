@@ -41,7 +41,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning className="platforms-code">
-      <body className={`${ibmSansArabic.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${ibmSansArabic.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <QueryProvider>
