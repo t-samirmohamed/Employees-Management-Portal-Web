@@ -1,7 +1,9 @@
+import type { EmployeeFiltersInput } from "@features/employees/schemas/employee-filters.schema";
+
 export const employeeKeys = {
   all: ["employees"] as const,
   lists: () => [...employeeKeys.all, "list"] as const,
-  list: (filters: Record<string, string | undefined>) => [...employeeKeys.lists(), filters] as const,
+  list: (filters: EmployeeFiltersInput) => [...employeeKeys.lists(), filters] as const,
   details: () => [...employeeKeys.all, "detail"] as const,
   detail: (id: number) => [...employeeKeys.details(), id] as const,
 };

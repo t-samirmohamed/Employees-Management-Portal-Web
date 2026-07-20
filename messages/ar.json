@@ -111,22 +111,22 @@
       "title": "تفاصيل الموظف",
       "back": "العودة إلى القائمة",
       "notFound": "لم يتم العثور على الموظف"
+    }
+  },
+  "enums": {
+    "gender": {
+      "M": "ذكر",
+      "F": "أنثى"
     },
-    "enums": {
-      "gender": {
-        "M": "ذكر",
-        "F": "أنثى"
-      },
-      "status": {
-        "Active": "نشط",
-        "Inactive": "غير نشط"
-      },
-      "attendanceStatus": {
-        "InOffice": "في المكتب",
-        "Absent": "غائب",
-        "OnVacation": "في إجازة",
-        "OutOfOffice": "خارج المكتب"
-      }
+    "status": {
+      "Active": "نشط",
+      "Inactive": "غير نشط"
+    },
+    "attendanceStatus": {
+      "InOffice": "في المكتب",
+      "Absent": "غائب",
+      "OnVacation": "في إجازة",
+      "OutOfOffice": "خارج المكتب"
     }
   },
   "statistics": {

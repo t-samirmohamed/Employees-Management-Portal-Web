@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/shared/lib/theme-provider";
 import { QueryProvider } from "@/shared/lib/query-provider";
 import { ZodLocaleSync } from "@/shared/lib/zod-locale-sync";
 import { Toaster } from "@/components/ui/sonner";
+import { AuthProvider } from "@features/auth/lib/auth-context";
 
 const ibmSansArabic = IBM_Plex_Sans_Arabic({
   variable: "--font-geist-sans",
@@ -44,9 +45,11 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <QueryProvider>
-              <ZodLocaleSync />
-              {children}
-              <Toaster />
+              <AuthProvider>
+                <ZodLocaleSync />
+                {children}
+                <Toaster />
+              </AuthProvider>
             </QueryProvider>
           </ThemeProvider>
         </NextIntlClientProvider>

@@ -1,7 +1,5 @@
+import { redirect } from "@/i18n/navigation";
+
 export default function Home() {
-  return (
-    <main className="flex min-h-svh items-center justify-center p-8">
-      <h1 className="text-2xl font-semibold">Employee Management</h1>
-    </main>
-  );
+  redirect("/employees");
 }

@@ -111,22 +111,22 @@
       "title": "Employee details",
       "back": "Back to list",
       "notFound": "Employee not found"
+    }
+  },
+  "enums": {
+    "gender": {
+      "M": "Male",
+      "F": "Female"
     },
-    "enums": {
-      "gender": {
-        "M": "Male",
-        "F": "Female"
-      },
-      "status": {
-        "Active": "Active",
-        "Inactive": "Inactive"
-      },
-      "attendanceStatus": {
-        "InOffice": "In office",
-        "Absent": "Absent",
-        "OnVacation": "On vacation",
-        "OutOfOffice": "Out of office"
-      }
+    "status": {
+      "Active": "Active",
+      "Inactive": "Inactive"
+    },
+    "attendanceStatus": {
+      "InOffice": "In office",
+      "Absent": "Absent",
+      "OnVacation": "On vacation",
+      "OutOfOffice": "Out of office"
     }
   },
   "statistics": {
