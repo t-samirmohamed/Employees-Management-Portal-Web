@@ -1,5 +1,6 @@
 import { redirect } from "@/i18n/navigation";
 
-export default function Home() {
-  redirect("/employees");
+export default async function Home({ params }: PageProps<"/[locale]">) {
+  const { locale } = await params;
+  redirect({ href: "/employees", locale });
 }
