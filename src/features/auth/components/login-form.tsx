@@ -94,7 +94,7 @@ export function LoginForm() {
               <p className="text-sm text-destructive">{t("invalidCredentials")}</p>
             )}
           </CardContent>
-          <CardFooter className="flex flex-col gap-4">
+          <CardFooter className="flex flex-col gap-4 pt-2">
             <Button type="submit" className="w-full" disabled={login.isPending}>
               {t("submit")}
             </Button>
