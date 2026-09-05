@@ -20,6 +20,7 @@
     "employees": "Employees",
     "tasks": "Tasks",
     "visits": "Visits",
+    "leaves": "Leaves",
     "clients": "Clients",
     "statistics": "Statistics",
     "users": "Users",
@@ -148,6 +149,12 @@
       "Rejected": "Rejected",
       "Cancelled": "Cancelled",
       "Done": "Done"
+    },
+    "leaveRequestStatus": {
+      "Pending": "Pending",
+      "Accepted": "Accepted",
+      "Rejected": "Rejected",
+      "DelayRequested": "Delay requested"
     }
   },
   "tasks": {
@@ -206,6 +213,54 @@
       "edited": "edited",
       "confirmDeleteTitle": "Delete comment",
       "confirmDeleteDescription": "Are you sure you want to delete this comment?"
+    }
+  },
+  "leaves": {
+    "myRequests": {
+      "title": "My Requests",
+      "submit": "Submit request",
+      "noResults": "No leave requests yet",
+      "edit": "Edit",
+      "delete": "Delete",
+      "confirmDeleteTitle": "Delete leave request",
+      "confirmDeleteDescription": "Are you sure you want to delete this leave request?"
+    },
+    "approverQueue": {
+      "title": "Approver Queue",
+      "noResults": "No leave requests to review",
+      "actions": "Actions"
+    },
+    "fields": {
+      "startDate": "Start date",
+      "endDate": "End date",
+      "status": "Status",
+      "approver": "Approver",
+      "requester": "Requester",
+      "reason": "Reason",
+      "pickDate": "Pick a date"
+    },
+    "create": {
+      "title": "Submit leave request",
+      "submit": "Submit",
+      "success": "Leave request submitted successfully"
+    },
+    "edit": {
+      "title": "Edit leave request",
+      "submit": "Save",
+      "success": "Leave request updated successfully"
+    },
+    "actions": {
+      "accept": "Accept",
+      "reject": "Reject",
+      "rejectTitle": "Reject leave request",
+      "reason": "Reason",
+      "requestDelay": "Request delay",
+      "requestDelayTitle": "Request a delay",
+      "targetDate": "New target date",
+      "pickDate": "Pick a date"
+    },
+    "validation": {
+      "endBeforeStart": "End date must be on or after the start date"
     }
   },
   "visits": {

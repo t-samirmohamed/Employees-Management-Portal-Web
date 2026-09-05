@@ -6,3 +6,4 @@ export type EmployeeStatus = "Active" | "Inactive";
 export type AttendanceStatus = "InOffice" | "Absent" | "OnVacation" | "OutOfOffice";
 export type Role = "Admin" | "Manager" | "Supervisor" | "Employee";
 export type TaskItemStatus = "New" | "InProgress" | "Rejected" | "Cancelled" | "Done";
+export type LeaveRequestStatus = "Pending" | "Accepted" | "Rejected" | "DelayRequested";

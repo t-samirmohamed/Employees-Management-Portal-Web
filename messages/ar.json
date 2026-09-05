@@ -20,6 +20,7 @@
     "employees": "الموظفون",
     "tasks": "المهام",
     "visits": "الزيارات",
+    "leaves": "الإجازات",
     "clients": "العملاء",
     "statistics": "الإحصائيات",
     "users": "المستخدمون",
@@ -148,6 +149,12 @@
       "Rejected": "مرفوضة",
       "Cancelled": "ملغاة",
       "Done": "مكتملة"
+    },
+    "leaveRequestStatus": {
+      "Pending": "قيد الانتظار",
+      "Accepted": "مقبولة",
+      "Rejected": "مرفوضة",
+      "DelayRequested": "طُلب التأجيل"
     }
   },
   "tasks": {
@@ -206,6 +213,54 @@
       "edited": "مُعدَّل",
       "confirmDeleteTitle": "حذف التعليق",
       "confirmDeleteDescription": "هل أنت متأكد من رغبتك في حذف هذا التعليق؟"
+    }
+  },
+  "leaves": {
+    "myRequests": {
+      "title": "طلباتي",
+      "submit": "تقديم طلب",
+      "noResults": "لا توجد طلبات إجازة بعد",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "confirmDeleteTitle": "حذف طلب الإجازة",
+      "confirmDeleteDescription": "هل أنت متأكد من رغبتك في حذف طلب الإجازة هذا؟"
+    },
+    "approverQueue": {
+      "title": "طلبات بانتظار المراجعة",
+      "noResults": "لا توجد طلبات إجازة للمراجعة",
+      "actions": "الإجراءات"
+    },
+    "fields": {
+      "startDate": "تاريخ البدء",
+      "endDate": "تاريخ الانتهاء",
+      "status": "الحالة",
+      "approver": "المُعتمِد",
+      "requester": "مقدّم الطلب",
+      "reason": "السبب",
+      "pickDate": "اختر تاريخًا"
+    },
+    "create": {
+      "title": "تقديم طلب إجازة",
+      "submit": "إرسال",
+      "success": "تم تقديم طلب الإجازة بنجاح"
+    },
+    "edit": {
+      "title": "تعديل طلب الإجازة",
+      "submit": "حفظ",
+      "success": "تم تحديث طلب الإجازة بنجاح"
+    },
+    "actions": {
+      "accept": "قبول",
+      "reject": "رفض",
+      "rejectTitle": "رفض طلب الإجازة",
+      "reason": "السبب",
+      "requestDelay": "طلب تأجيل",
+      "requestDelayTitle": "طلب تأجيل",
+      "targetDate": "التاريخ الجديد المقترح",
+      "pickDate": "اختر تاريخًا"
+    },
+    "validation": {
+      "endBeforeStart": "يجب أن يكون تاريخ الانتهاء في نفس تاريخ البدء أو بعده"
     }
   },
   "visits": {

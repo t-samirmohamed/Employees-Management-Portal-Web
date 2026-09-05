@@ -33,6 +33,11 @@ export const visitKeys = {
   detail: (id: number) => [...visitKeys.details(), id] as const,
 };
 
+export const leaveKeys = {
+  all: ["leaves"] as const,
+  lists: () => [...leaveKeys.all, "list"] as const,
+};
+
 export const clientKeys = {
   all: ["clients"] as const,
   lists: () => [...clientKeys.all, "list"] as const,

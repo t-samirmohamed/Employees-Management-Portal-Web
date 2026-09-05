@@ -40,6 +40,9 @@ function DashboardNav() {
         <Link href="/visits" className="text-sm font-medium hover:underline">
           {t("visits")}
         </Link>
+        <Link href="/leaves" className="text-sm font-medium hover:underline">
+          {t("leaves")}
+        </Link>
         {canSeeClients && (
           <Link href="/clients" className="text-sm font-medium hover:underline">
             {t("clients")}
