@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
@@ -15,15 +15,21 @@ import type { LeaveRequest } from "@features/leaves/types/leave.types";
 export function ApproverQueueList({
   requests,
   getName,
+  highlightId,
 }: {
   requests: LeaveRequest[];
   getName: (id: number) => string;
+  highlightId?: number | null;
 }) {
   const t = useTranslations("leaves");
   const tErrors = useTranslations("errors");
   const acceptLeave = useAcceptLeave();
   const [rejectTarget, setRejectTarget] = useState<number | null>(null);
   const [delayTarget, setDelayTarget] = useState<number | null>(null);
+  useEffect(() => {
+    if (highlightId === null || highlightId === undefined) return;
+    document.getElementById(`leave-row-${highlightId}`)?.scrollIntoView({ block: "center" });
+  }, [highlightId]);
 
   if (requests.length === 0) {
     return <p className="text-sm text-muted-foreground">{t("approverQueue.noResults")}</p>;
@@ -43,7 +49,11 @@ export function ApproverQueueList({
         </TableHeader>
         <TableBody>
           {requests.map((leave) => (
-            <TableRow key={leave.id}>
+            <TableRow
+              key={leave.id}
+              id={`leave-row-${leave.id}`}
+              className={leave.id === highlightId ? "bg-accent" : undefined}
+            >
               <TableCell>{getName(leave.requesterId)}</TableCell>
               <TableCell>{format(new Date(leave.startDate), "PP")}</TableCell>
               <TableCell>{format(new Date(leave.endDate), "PP")}</TableCell>

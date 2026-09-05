@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -13,6 +14,9 @@ import { LeaveRequestDialog } from "@features/leaves/components/leave-request-di
 
 export default function LeavesPage() {
   const t = useTranslations("leaves");
+  const searchParams = useSearchParams();
+  const requestIdParam = searchParams.get("requestId");
+  const highlightId = requestIdParam ? Number(requestIdParam) : null;
   const { data: leaves, isLoading } = useLeaves();
   const { getName, currentEmployeeId } = useEmployeeLookup();
   const canSubmit = useHasRole("Employee", "Manager", "Supervisor");
@@ -38,7 +42,7 @@ export default function LeavesPage() {
           {isLoading ? (
             <Skeleton className="h-10 w-full" />
           ) : (
-            <ApproverQueueList requests={approverQueue} getName={getName} />
+            <ApproverQueueList requests={approverQueue} getName={getName} highlightId={highlightId} />
           )}
         </div>
       )}

@@ -215,6 +215,14 @@
       "confirmDeleteDescription": "هل أنت متأكد من رغبتك في حذف هذا التعليق؟"
     }
   },
+  "notifications": {
+    "bell": {
+      "empty": "لا توجد إشعارات"
+    },
+    "messages": {
+      "LeaveRequestSubmitted": "تم تقديم طلب إجازة بانتظار مراجعتك"
+    }
+  },
   "leaves": {
     "myRequests": {
       "title": "طلباتي",
@@ -374,7 +382,42 @@
     "totalEmployees": "إجمالي الموظفين",
     "byGender": "حسب الجنس",
     "byStatus": "حسب الحالة",
-    "byAttendanceStatus": "حسب حالة الحضور"
+    "byAttendanceStatus": "حسب حالة الحضور",
+    "statusStats": {
+      "title": "إحصائيات الحالة والزيارات",
+      "tasksByStatus": "المهام حسب الحالة",
+      "visitsByStatus": "الزيارات حسب الحالة"
+    },
+    "mostVisitedClients": {
+      "title": "الأكثر زيارة من العملاء",
+      "noResults": "لا توجد زيارات مسجلة لهذه الفترة",
+      "ranges": {
+        "month": "شهر واحد",
+        "3month": "3 أشهر",
+        "6month": "6 أشهر",
+        "year": "سنة واحدة"
+      }
+    },
+    "supervisorTeams": {
+      "title": "فرق المشرفين",
+      "noResults": "لا يوجد مشرفون",
+      "supervisor": "المشرف",
+      "client": "العميل",
+      "teamSize": "حجم الفريق",
+      "openTasks": "المهام المفتوحة",
+      "attendance": "الحضور"
+    },
+    "monthlyActivity": {
+      "title": "النشاط الشهري",
+      "notAvailable": "غير متاح",
+      "totalTasks": "إجمالي المهام",
+      "totalVisits": "إجمالي الزيارات",
+      "currentAttendance": "حالة الحضور الحالية",
+      "attendanceDrivingTasks": "المهام المؤثرة على الحضور",
+      "tasksByStatus": "المهام حسب الحالة",
+      "visitsByStatus": "الزيارات حسب الحالة",
+      "leavesNote": "طلبات الإجازة غير مُدرجة بعد في هذا الملخص."
+    }
   },
   "errors": {
     "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",

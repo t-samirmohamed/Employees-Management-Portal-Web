@@ -215,6 +215,14 @@
       "confirmDeleteDescription": "Are you sure you want to delete this comment?"
     }
   },
+  "notifications": {
+    "bell": {
+      "empty": "No notifications"
+    },
+    "messages": {
+      "LeaveRequestSubmitted": "A leave request was submitted for your review"
+    }
+  },
   "leaves": {
     "myRequests": {
       "title": "My Requests",
@@ -374,7 +382,42 @@
     "totalEmployees": "Total employees",
     "byGender": "By gender",
     "byStatus": "By status",
-    "byAttendanceStatus": "By attendance"
+    "byAttendanceStatus": "By attendance",
+    "statusStats": {
+      "title": "Status & Visit Stats",
+      "tasksByStatus": "Tasks by status",
+      "visitsByStatus": "Visits by status"
+    },
+    "mostVisitedClients": {
+      "title": "Most Visited Clients",
+      "noResults": "No visits recorded for this range",
+      "ranges": {
+        "month": "1 month",
+        "3month": "3 months",
+        "6month": "6 months",
+        "year": "1 year"
+      }
+    },
+    "supervisorTeams": {
+      "title": "Supervisor Teams",
+      "noResults": "No supervisors found",
+      "supervisor": "Supervisor",
+      "client": "Client",
+      "teamSize": "Team size",
+      "openTasks": "Open tasks",
+      "attendance": "Attendance"
+    },
+    "monthlyActivity": {
+      "title": "Monthly Activity",
+      "notAvailable": "Not available",
+      "totalTasks": "Total tasks",
+      "totalVisits": "Total visits",
+      "currentAttendance": "Current attendance",
+      "attendanceDrivingTasks": "Attendance-driving tasks",
+      "tasksByStatus": "Tasks by status",
+      "visitsByStatus": "Visits by status",
+      "leavesNote": "Leave requests are not yet included in this rollup."
+    }
   },
   "errors": {
     "generic": "Something went wrong. Please try again.",

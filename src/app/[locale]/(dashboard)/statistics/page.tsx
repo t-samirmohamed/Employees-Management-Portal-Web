@@ -3,46 +3,18 @@
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useHasRole } from "@features/auth/lib/use-has-role";
 import { useEmployeeStatistics } from "@features/statistics/hooks/use-employee-statistics";
-
-type EnumNamespace = "gender" | "status" | "attendanceStatus";
-
-function BreakdownCard({
-  title,
-  counts,
-  labelNamespace,
-}: {
-  title: string;
-  counts: Record<string, number>;
-  labelNamespace: EnumNamespace;
-}) {
-  const tEnums = useTranslations("enums");
-  const entries = Object.entries(counts);
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-base">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-2">
-        {entries.length === 0 ? (
-          <p className="text-sm text-muted-foreground">—</p>
-        ) : (
-          entries.map(([key, count]) => (
-            <div key={key} className="flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">{tEnums(`${labelNamespace}.${key}`)}</span>
-              <span className="font-medium">{count}</span>
-            </div>
-          ))
-        )}
-      </CardContent>
-    </Card>
-  );
-}
+import { BreakdownCard } from "@features/statistics/components/breakdown-card";
+import { StatusStatsCard } from "@features/statistics/components/status-stats-card";
+import { MostVisitedClientsCard } from "@features/statistics/components/most-visited-clients-card";
+import { SupervisorTeamStatsTable } from "@features/statistics/components/supervisor-team-stats-table";
 
 export default function StatisticsPage() {
   const t = useTranslations("statistics");
   const { data, isLoading } = useEmployeeStatistics();
+  const canSeeStatusStats = useHasRole("Admin", "Manager", "Supervisor");
+  const canSeeClientStats = useHasRole("Admin", "Manager");
 
   return (
     <div className="flex flex-col gap-6">
@@ -73,6 +45,10 @@ export default function StatisticsPage() {
           />
         </div>
       )}
+
+      {canSeeStatusStats && <StatusStatsCard />}
+      {canSeeClientStats && <MostVisitedClientsCard />}
+      {canSeeClientStats && <SupervisorTeamStatsTable />}
     </div>
   );
 }

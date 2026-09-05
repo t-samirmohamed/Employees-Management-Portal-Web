@@ -13,12 +13,15 @@ import {
   GenderBadge,
   StatusBadge,
 } from "@features/employees/components/enum-badge";
+import { useHasRole } from "@features/auth/lib/use-has-role";
+import { EmployeeMonthlyActivity } from "@features/statistics/components/employee-monthly-activity";
 
 export default function EmployeeDetailPage() {
   const t = useTranslations("employees");
   const params = useParams<{ id: string }>();
   const id = Number(params.id);
   const { data: employee, isLoading, isError } = useEmployee(id);
+  const canSeeMonthlyActivity = useHasRole("Admin", "Manager", "Supervisor");
 
   return (
     <div className="flex flex-col gap-4">
@@ -65,6 +68,10 @@ export default function EmployeeDetailPage() {
             </div>
           </CardContent>
         </Card>
+      )}
+
+      {!isLoading && employee && canSeeMonthlyActivity && (
+        <EmployeeMonthlyActivity employeeId={employee.id} />
       )}
     </div>
   );

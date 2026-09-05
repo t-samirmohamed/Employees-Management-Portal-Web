@@ -10,6 +10,11 @@ export const employeeKeys = {
 
 export const statisticsKeys = {
   employees: ["statistics", "employees"] as const,
+  employeeMonthly: (id: number, year: number, month: number) =>
+    ["statistics", "employees", id, "monthly", year, month] as const,
+  status: ["statistics", "status"] as const,
+  mostVisitedClients: (range: string) => ["statistics", "clients", "most-visited", range] as const,
+  supervisors: ["statistics", "supervisors"] as const,
 };
 
 export const userKeys = {
@@ -31,6 +36,11 @@ export const visitKeys = {
   list: () => [...visitKeys.lists()] as const,
   details: () => [...visitKeys.all, "detail"] as const,
   detail: (id: number) => [...visitKeys.details(), id] as const,
+};
+
+export const notificationKeys = {
+  all: ["notifications"] as const,
+  lists: () => [...notificationKeys.all, "list"] as const,
 };
 
 export const leaveKeys = {

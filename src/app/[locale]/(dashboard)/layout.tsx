@@ -12,6 +12,7 @@ import { LanguageSwitcher } from "@/shared/components/language-switcher";
 import { ThemeToggle } from "@/shared/components/theme-toggle";
 import { useEmployeeLookup } from "@/shared/hooks/use-employee-lookup";
 import { AttendanceBadge } from "@features/employees/components/enum-badge";
+import { NotificationBell } from "@features/notifications/components/notification-bell";
 
 function DashboardNav() {
   const t = useTranslations("nav");
@@ -19,6 +20,7 @@ function DashboardNav() {
   const logoutMutation = useLogout();
   const isAdmin = useHasRole("Admin");
   const canSeeClients = useHasRole(...(["Admin", "Manager", "Supervisor"] satisfies Role[]));
+  const canSeeNotifications = useHasRole(...(["Admin", "Manager", "Supervisor"] satisfies Role[]));
   const { currentEmployee } = useEmployeeLookup();
 
   function handleLogout() {
@@ -59,6 +61,7 @@ function DashboardNav() {
       </nav>
       <div className="flex items-center gap-2">
         {currentEmployee && <AttendanceBadge value={currentEmployee.attendanceStatus} />}
+        {canSeeNotifications && <NotificationBell />}
         <LanguageSwitcher />
         <ThemeToggle />
         <Button variant="ghost" size="sm" onClick={handleLogout}>
