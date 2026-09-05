@@ -29,6 +29,9 @@ function DashboardNav() {
         <Link href="/employees" className="text-sm font-medium hover:underline">
           {t("employees")}
         </Link>
+        <Link href="/tasks" className="text-sm font-medium hover:underline">
+          {t("tasks")}
+        </Link>
         <Link href="/statistics" className="text-sm font-medium hover:underline">
           {t("statistics")}
         </Link>

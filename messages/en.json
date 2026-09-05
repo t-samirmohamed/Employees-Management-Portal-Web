@@ -18,6 +18,7 @@
   },
   "nav": {
     "employees": "Employees",
+    "tasks": "Tasks",
     "statistics": "Statistics",
     "users": "Users",
     "logout": "Log out",
@@ -138,6 +139,71 @@
       "Manager": "Manager",
       "Supervisor": "Supervisor",
       "Employee": "Employee"
+    },
+    "taskItemStatus": {
+      "New": "New",
+      "InProgress": "In progress",
+      "Rejected": "Rejected",
+      "Cancelled": "Cancelled",
+      "Done": "Done"
+    }
+  },
+  "tasks": {
+    "list": {
+      "title": "Tasks",
+      "createNew": "Add task",
+      "noResults": "No tasks found"
+    },
+    "views": {
+      "list": "List",
+      "calendar": "Calendar",
+      "kanban": "Kanban"
+    },
+    "fields": {
+      "name": "Name",
+      "dueDate": "Due date",
+      "dueTime": "Due time",
+      "dueDateTime": "Due",
+      "assignee": "Assignee",
+      "pickDate": "Pick a date",
+      "pickAssignee": "Select an employee",
+      "notes": "Notes",
+      "attendanceRequired": "Attendance required",
+      "yes": "Yes",
+      "no": "No",
+      "rejectionReason": "Rejection reason",
+      "status": "Status"
+    },
+    "create": {
+      "title": "Add task",
+      "submit": "Create",
+      "success": "Task created successfully"
+    },
+    "detail": {
+      "back": "Back to tasks",
+      "notFound": "Task not found"
+    },
+    "actions": {
+      "accept": "Accept",
+      "reject": "Reject",
+      "rejectTitle": "Reject task",
+      "rejectReason": "Reason",
+      "reassign": "Reassign",
+      "reassignTitle": "Reassign task",
+      "assignee": "Assignee",
+      "cancel": "Cancel task",
+      "complete": "Complete"
+    },
+    "comments": {
+      "title": "Comments",
+      "noComments": "No comments yet",
+      "add": "Add comment",
+      "addPlaceholder": "Write a comment...",
+      "edit": "Edit",
+      "delete": "Delete",
+      "edited": "edited",
+      "confirmDeleteTitle": "Delete comment",
+      "confirmDeleteDescription": "Are you sure you want to delete this comment?"
     }
   },
   "users": {

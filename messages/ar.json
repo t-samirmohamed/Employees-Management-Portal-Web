@@ -18,6 +18,7 @@
   },
   "nav": {
     "employees": "الموظفون",
+    "tasks": "المهام",
     "statistics": "الإحصائيات",
     "users": "المستخدمون",
     "logout": "تسجيل الخروج",
@@ -138,6 +139,71 @@
       "Manager": "مدير",
       "Supervisor": "مشرف",
       "Employee": "موظف"
+    },
+    "taskItemStatus": {
+      "New": "جديدة",
+      "InProgress": "قيد التنفيذ",
+      "Rejected": "مرفوضة",
+      "Cancelled": "ملغاة",
+      "Done": "مكتملة"
+    }
+  },
+  "tasks": {
+    "list": {
+      "title": "المهام",
+      "createNew": "إضافة مهمة",
+      "noResults": "لا توجد مهام"
+    },
+    "views": {
+      "list": "قائمة",
+      "calendar": "تقويم",
+      "kanban": "كانبان"
+    },
+    "fields": {
+      "name": "الاسم",
+      "dueDate": "تاريخ الاستحقاق",
+      "dueTime": "وقت الاستحقاق",
+      "dueDateTime": "الموعد",
+      "assignee": "المكلّف",
+      "pickDate": "اختر تاريخًا",
+      "pickAssignee": "اختر موظفًا",
+      "notes": "ملاحظات",
+      "attendanceRequired": "الحضور مطلوب",
+      "yes": "نعم",
+      "no": "لا",
+      "rejectionReason": "سبب الرفض",
+      "status": "الحالة"
+    },
+    "create": {
+      "title": "إضافة مهمة",
+      "submit": "إنشاء",
+      "success": "تم إنشاء المهمة بنجاح"
+    },
+    "detail": {
+      "back": "العودة إلى المهام",
+      "notFound": "المهمة غير موجودة"
+    },
+    "actions": {
+      "accept": "قبول",
+      "reject": "رفض",
+      "rejectTitle": "رفض المهمة",
+      "rejectReason": "السبب",
+      "reassign": "إعادة التعيين",
+      "reassignTitle": "إعادة تعيين المهمة",
+      "assignee": "المكلّف",
+      "cancel": "إلغاء المهمة",
+      "complete": "إكمال"
+    },
+    "comments": {
+      "title": "التعليقات",
+      "noComments": "لا توجد تعليقات بعد",
+      "add": "إضافة تعليق",
+      "addPlaceholder": "اكتب تعليقًا...",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "edited": "مُعدَّل",
+      "confirmDeleteTitle": "حذف التعليق",
+      "confirmDeleteDescription": "هل أنت متأكد من رغبتك في حذف هذا التعليق؟"
     }
   },
   "users": {
