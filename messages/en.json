@@ -220,7 +220,12 @@
       "empty": "No notifications"
     },
     "messages": {
-      "LeaveRequestSubmitted": "A leave request was submitted for your review"
+      "LeaveRequestSubmitted": "A leave request was submitted for your review",
+      "LeaveRequestAccepted": "Your leave request was accepted",
+      "LeaveRequestRejected": "Your leave request was rejected",
+      "LeaveRequestDelayRequested": "A delay was requested for your leave request",
+      "TaskAssigned": "You were assigned a new task",
+      "VisitAssigned": "You were assigned a new visit"
     }
   },
   "leaves": {

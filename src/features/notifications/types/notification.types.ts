@@ -1,4 +1,10 @@
-export type NotificationType = "LeaveRequestSubmitted";
+export type NotificationType =
+  | "LeaveRequestSubmitted"
+  | "LeaveRequestAccepted"
+  | "LeaveRequestRejected"
+  | "LeaveRequestDelayRequested"
+  | "TaskAssigned"
+  | "VisitAssigned";
 
 export type Notification = {
   id: number;

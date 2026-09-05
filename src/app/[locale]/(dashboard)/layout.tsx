@@ -20,7 +20,7 @@ function DashboardNav() {
   const logoutMutation = useLogout();
   const isAdmin = useHasRole("Admin");
   const canSeeClients = useHasRole(...(["Admin", "Manager", "Supervisor"] satisfies Role[]));
-  const canSeeNotifications = useHasRole(...(["Admin", "Manager", "Supervisor"] satisfies Role[]));
+  const canSeeNotifications = useHasRole(...(["Admin", "Manager", "Supervisor", "Employee"] satisfies Role[]));
   const { currentEmployee } = useEmployeeLookup();
 
   function handleLogout() {

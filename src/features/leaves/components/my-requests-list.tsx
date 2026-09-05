@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
@@ -22,9 +22,11 @@ import type { LeaveRequest } from "@features/leaves/types/leave.types";
 export function MyRequestsList({
   requests,
   getName,
+  highlightId,
 }: {
   requests: LeaveRequest[];
   getName: (id: number) => string;
+  highlightId?: number | null;
 }) {
   const t = useTranslations("leaves");
   const tCommon = useTranslations("common");
@@ -32,6 +34,10 @@ export function MyRequestsList({
   const deleteLeave = useDeleteLeave();
   const [editTarget, setEditTarget] = useState<LeaveRequest | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<LeaveRequest | null>(null);
+  useEffect(() => {
+    if (highlightId === null || highlightId === undefined) return;
+    document.getElementById(`my-request-row-${highlightId}`)?.scrollIntoView({ block: "center" });
+  }, [highlightId]);
 
   function handleDelete() {
     if (!deleteTarget) return;
@@ -59,7 +65,11 @@ export function MyRequestsList({
         </TableHeader>
         <TableBody>
           {requests.map((leave) => (
-            <TableRow key={leave.id}>
+            <TableRow
+              key={leave.id}
+              id={`my-request-row-${leave.id}`}
+              className={leave.id === highlightId ? "bg-accent" : undefined}
+            >
               <TableCell>{format(new Date(leave.startDate), "PP")}</TableCell>
               <TableCell>{format(new Date(leave.endDate), "PP")}</TableCell>
               <TableCell>

@@ -110,8 +110,32 @@ export function useNotifications() {
 
 ## Done Criteria
 
-- [ ] `notificationKeys` + `src/features/notifications/` implemented end-to-end.
-- [ ] Bell + unread badge + popover list, gated to Admin/Manager/Supervisor, polling every 30s.
-- [ ] Click marks read and deep-links to the specific leave request (scroll + highlight), not just the page.
-- [ ] `en.json`/`ar.json` updated.
-- [ ] Manual Test Plan passes (using a manually-inserted test row, since the trigger isn't wired backend-side).
+- [x] `notificationKeys` + `src/features/notifications/` implemented end-to-end.
+- [x] Bell + unread badge + popover list, gated to Admin/Manager/Supervisor, polling every 30s.
+- [x] Click marks read and deep-links to the specific leave request (scroll + highlight), not just the page.
+- [x] `en.json`/`ar.json` updated.
+- [x] Manual Test Plan passes (using a manually-inserted test row, since the trigger isn't wired backend-side).
+
+## Addendum — backend triggers wired, notification set expanded (superseding several items above)
+
+The "known, accepted limitation" this story shipped with (§ Story Goal point 3, § Context item 1, § Edge Cases, § Test Plan) has been resolved: the user explicitly requested extending the backend (a one-time, deliberate exception to this initiative's otherwise-strict "backend is read-only reference" rule) to notify assignees/requesters about task/visit assignment and leave decisions, not just leave submission.
+
+**Backend changes** (`EmpoloyeeManagment`, outside this repo but documented here since it changes this story's contract):
+- `Models/Enums.cs`'s `NotificationType` grew from one member to six: `LeaveRequestSubmitted`, `LeaveRequestAccepted`, `LeaveRequestRejected`, `LeaveRequestDelayRequested`, `TaskAssigned`, `VisitAssigned`.
+- `INotificationService`/`NotificationService` gained one method per new type (all funneling through a shared private `CreateNotificationsAsync` helper — the original single-purpose method's try/catch/insert logic, generalized).
+- `LeaveEndpoints.CreateLeaveRequestAsync` now actually calls `NotifyLeaveRequestSubmittedAsync` (previously unwired — the DTO/route existed but nothing ever triggered it). Recipients are computed via a new `GetEligibleApproverUserIdsAsync` helper: every employee whose role outranks the requester's, per the same rank table `CanActionLeaveRequest` already used for authorization — i.e., exactly the people actually allowed to action the request, not a hardcoded "all Admins" list. `AcceptLeaveRequestAsync`/`RejectLeaveRequestAsync`/`RequestDelayAsync` each now notify the requester with the matching type.
+- `TaskEndpoints.CreateTaskAsync` and `ReassignTaskAsync` now notify the (new) assignee with `TaskAssigned`.
+- `VisitEndpoints.CreateVisitAsync` notifies the assignee with `VisitAssigned` — deliberately not also firing `TaskAssigned` for the auto-created driving task, since that task is an implementation detail of the visit from the recipient's point of view.
+- Verified live (signup a fresh Employee account, submit/accept/reject/delay leave requests, create/reassign a task, create a visit, all via direct API calls) plus a SQL check of the `Notifications` table confirming exactly the expected rows/recipients for every trigger, including the rank-based fan-out (a Manager's own submission correctly notified only Admins, not Supervisors/Managers).
+
+**Frontend changes** (this repo):
+- `src/features/notifications/types/notification.types.ts` — `NotificationType` is now the 6-member union above (was 1).
+- `src/features/notifications/components/notification-bell.tsx` — `messageFor`/`linkFor` extended with a case per new type. Task/Visit notifications deep-link to `/tasks/{referenceId}` / `/visits/{referenceId}`; the three leave-decision types deep-link to `/leaves?myRequestId={referenceId}` (a **new** search param, distinct from the existing `?requestId=` used for the approver queue — see next point) since their recipient is the original requester, not an approver.
+- `src/features/leaves/components/my-requests-list.tsx` — gained the same `highlightId?: number | null` + scroll-into-view + `bg-accent` treatment `approver-queue-list.tsx` already had, for symmetry (a requester now needs their own row found and highlighted, not just an approver's).
+- `src/app/[locale]/(dashboard)/leaves/page.tsx` — reads the new `?myRequestId=` param, passes it to `MyRequestsList`.
+- **`src/app/[locale]/(dashboard)/layout.tsx`'s nav gate widened**: `canSeeNotifications` was `["Admin", "Manager", "Supervisor"]` (correct at the time — the only notification type was leave-submission, which never targets an Employee). With `TaskAssigned`/`VisitAssigned`/leave-decision types added, an Employee is now a legitimate recipient, so the gate grew to include `"Employee"` — found and fixed while browser-verifying this exact extension (an Employee test account had unread notifications but no bell to see them).
+- `en.json`/`ar.json` — `notifications.messages` gained one key per new type.
+
+**Edge Cases §, revised**: "No notifications ever created" no longer applies — all six triggers are live. The `referenceId`-points-at-something-the-viewer-can-no-longer-see case is now also possible for `TaskAssigned` (task reassigned away before the original assignee opens the notification — confirmed live: correctly 404s via the existing task ownership check, not a broken link) in addition to the original leave-request case.
+
+**Out of scope, not addressed by this addendum**: per-device/granular notification preferences, marking all-read in bulk, and a real-time push (still polling every 30s) — none of these were asked for.

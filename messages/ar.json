@@ -220,7 +220,12 @@
       "empty": "لا توجد إشعارات"
     },
     "messages": {
-      "LeaveRequestSubmitted": "تم تقديم طلب إجازة بانتظار مراجعتك"
+      "LeaveRequestSubmitted": "تم تقديم طلب إجازة بانتظار مراجعتك",
+      "LeaveRequestAccepted": "تم قبول طلب إجازتك",
+      "LeaveRequestRejected": "تم رفض طلب إجازتك",
+      "LeaveRequestDelayRequested": "تم طلب تأجيل بخصوص طلب إجازتك",
+      "TaskAssigned": "تم تكليفك بمهمة جديدة",
+      "VisitAssigned": "تم تكليفك بزيارة جديدة"
     }
   },
   "leaves": {

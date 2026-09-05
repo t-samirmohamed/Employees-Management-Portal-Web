@@ -17,6 +17,8 @@ export default function LeavesPage() {
   const searchParams = useSearchParams();
   const requestIdParam = searchParams.get("requestId");
   const highlightId = requestIdParam ? Number(requestIdParam) : null;
+  const myRequestIdParam = searchParams.get("myRequestId");
+  const myHighlightId = myRequestIdParam ? Number(myRequestIdParam) : null;
   const { data: leaves, isLoading } = useLeaves();
   const { getName, currentEmployeeId } = useEmployeeLookup();
   const canSubmit = useHasRole("Employee", "Manager", "Supervisor");
@@ -33,7 +35,11 @@ export default function LeavesPage() {
           <h1 className="text-2xl font-semibold">{t("myRequests.title")}</h1>
           {canSubmit && <Button onClick={() => setCreateOpen(true)}>{t("myRequests.submit")}</Button>}
         </div>
-        {isLoading ? <Skeleton className="h-10 w-full" /> : <MyRequestsList requests={myRequests} getName={getName} />}
+        {isLoading ? (
+          <Skeleton className="h-10 w-full" />
+        ) : (
+          <MyRequestsList requests={myRequests} getName={getName} highlightId={myHighlightId} />
+        )}
       </div>
 
       {isApprover && (

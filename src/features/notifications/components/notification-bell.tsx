@@ -16,6 +16,16 @@ function messageFor(notification: Notification, t: (key: string) => string): str
   switch (notification.type) {
     case "LeaveRequestSubmitted":
       return t("messages.LeaveRequestSubmitted");
+    case "LeaveRequestAccepted":
+      return t("messages.LeaveRequestAccepted");
+    case "LeaveRequestRejected":
+      return t("messages.LeaveRequestRejected");
+    case "LeaveRequestDelayRequested":
+      return t("messages.LeaveRequestDelayRequested");
+    case "TaskAssigned":
+      return t("messages.TaskAssigned");
+    case "VisitAssigned":
+      return t("messages.VisitAssigned");
     default:
       return notification.type;
   }
@@ -25,6 +35,14 @@ function linkFor(notification: Notification): string {
   switch (notification.type) {
     case "LeaveRequestSubmitted":
       return `/leaves?requestId=${notification.referenceId}`;
+    case "LeaveRequestAccepted":
+    case "LeaveRequestRejected":
+    case "LeaveRequestDelayRequested":
+      return `/leaves?myRequestId=${notification.referenceId}`;
+    case "TaskAssigned":
+      return `/tasks/${notification.referenceId}`;
+    case "VisitAssigned":
+      return `/visits/${notification.referenceId}`;
     default:
       return "/leaves";
   }

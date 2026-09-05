@@ -10,4 +10,4 @@ Entry point for the **notifications** feature. Stories execute in order by their
 
 ## Dependency notes
 
-Last story in the initial 7-story roadmap. Known accepted limitation: shows nothing in practice until the backend wires its own trigger call — see the story file.
+Last story in the initial 7-story roadmap. Originally shipped with a known accepted limitation (backend trigger unwired, UI would show nothing in practice) — since resolved via an explicitly user-approved backend extension (real triggers for leave submit/accept/reject/delay plus new task/visit assignment notifications). See the story file's "Addendum" section.
