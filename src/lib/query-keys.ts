@@ -11,3 +11,8 @@ export const employeeKeys = {
 export const statisticsKeys = {
   employees: ["statistics", "employees"] as const,
 };
+
+export const userKeys = {
+  all: ["users"] as const,
+  lists: () => [...userKeys.all, "list"] as const,
+};

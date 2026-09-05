@@ -13,11 +13,13 @@
     "light": "فاتح",
     "dark": "داكن",
     "system": "النظام",
-    "close": "إغلاق"
+    "close": "إغلاق",
+    "noActions": "لا توجد إجراءات متاحة"
   },
   "nav": {
     "employees": "الموظفون",
     "statistics": "الإحصائيات",
+    "users": "المستخدمون",
     "logout": "تسجيل الخروج",
     "login": "تسجيل الدخول",
     "signup": "إنشاء حساب"
@@ -130,6 +132,45 @@
       "Absent": "غائب",
       "OnVacation": "في إجازة",
       "OutOfOffice": "خارج المكتب"
+    },
+    "role": {
+      "Admin": "مسؤول",
+      "Manager": "مدير",
+      "Supervisor": "مشرف",
+      "Employee": "موظف"
+    }
+  },
+  "users": {
+    "list": {
+      "title": "المستخدمون",
+      "createNew": "إضافة مستخدم",
+      "noResults": "لا يوجد مستخدمون"
+    },
+    "fields": {
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "email": "البريد الإلكتروني",
+      "gender": "الجنس",
+      "role": "الدور",
+      "password": "كلمة المرور",
+      "employee": "الموظف المرتبط"
+    },
+    "create": {
+      "title": "إضافة مستخدم",
+      "submit": "إنشاء",
+      "success": "تم إنشاء المستخدم بنجاح",
+      "serverErrors": {
+        "DuplicateUserName": "اسم المستخدم هذا مستخدم بالفعل",
+        "DuplicateEmail": "هذا البريد الإلكتروني مسجّل بالفعل",
+        "InvalidEmail": "صيغة البريد الإلكتروني غير صحيحة",
+        "PasswordTooShort": "كلمة المرور قصيرة جدًا",
+        "PasswordRequiresDigit": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+        "PasswordRequiresLower": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+        "PasswordRequiresUpper": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+        "PasswordRequiresNonAlphanumeric": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+        "PasswordRequiresUniqueChars": "كلمة المرور لا تحتوي على عدد كافٍ من الأحرف الفريدة",
+        "generic": "حدث خطأ أثناء إنشاء المستخدم"
+      }
     }
   },
   "statistics": {

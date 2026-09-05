@@ -20,11 +20,13 @@ import {
 } from "@/components/ui/dialog";
 import { useActivateEmployee } from "@features/employees/hooks/use-activate-employee";
 import { useDeactivateEmployee } from "@features/employees/hooks/use-deactivate-employee";
+import { useHasRole } from "@features/auth/lib/use-has-role";
 import type { EmployeeListItem } from "@features/employees/types/employee.types";
 
 export function EmployeeRowActions({ employee }: { employee: EmployeeListItem }) {
   const t = useTranslations("employees.actions");
   const tCommon = useTranslations("common");
+  const isAdmin = useHasRole("Admin");
   const [confirmAction, setConfirmAction] = useState<"activate" | "deactivate" | null>(null);
   const activate = useActivateEmployee();
   const deactivate = useDeactivateEmployee();
@@ -46,14 +48,18 @@ export function EmployeeRowActions({ employee }: { employee: EmployeeListItem })
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          {employee.status === "Active" ? (
-            <DropdownMenuItem onSelect={() => setConfirmAction("deactivate")}>
-              {t("deactivate")}
-            </DropdownMenuItem>
+          {isAdmin ? (
+            employee.status === "Active" ? (
+              <DropdownMenuItem onSelect={() => setConfirmAction("deactivate")}>
+                {t("deactivate")}
+              </DropdownMenuItem>
+            ) : (
+              <DropdownMenuItem onSelect={() => setConfirmAction("activate")}>
+                {t("activate")}
+              </DropdownMenuItem>
+            )
           ) : (
-            <DropdownMenuItem onSelect={() => setConfirmAction("activate")}>
-              {t("activate")}
-            </DropdownMenuItem>
+            <DropdownMenuItem disabled>{tCommon("noActions")}</DropdownMenuItem>
           )}
         </DropdownMenuContent>
       </DropdownMenu>

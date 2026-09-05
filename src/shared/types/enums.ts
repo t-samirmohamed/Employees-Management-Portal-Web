@@ -4,3 +4,4 @@
 export type Gender = "M" | "F";
 export type EmployeeStatus = "Active" | "Inactive";
 export type AttendanceStatus = "InOffice" | "Absent" | "OnVacation" | "OutOfOffice";
+export type Role = "Admin" | "Manager" | "Supervisor" | "Employee";

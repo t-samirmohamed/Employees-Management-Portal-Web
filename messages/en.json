@@ -13,11 +13,13 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System",
-    "close": "Close"
+    "close": "Close",
+    "noActions": "No actions available"
   },
   "nav": {
     "employees": "Employees",
     "statistics": "Statistics",
+    "users": "Users",
     "logout": "Log out",
     "login": "Log in",
     "signup": "Sign up"
@@ -130,6 +132,45 @@
       "Absent": "Absent",
       "OnVacation": "On vacation",
       "OutOfOffice": "Out of office"
+    },
+    "role": {
+      "Admin": "Admin",
+      "Manager": "Manager",
+      "Supervisor": "Supervisor",
+      "Employee": "Employee"
+    }
+  },
+  "users": {
+    "list": {
+      "title": "Users",
+      "createNew": "Add user",
+      "noResults": "No users found"
+    },
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "gender": "Gender",
+      "role": "Role",
+      "password": "Password",
+      "employee": "Linked employee"
+    },
+    "create": {
+      "title": "Add user",
+      "submit": "Create",
+      "success": "User created successfully",
+      "serverErrors": {
+        "DuplicateUserName": "This username is already taken",
+        "DuplicateEmail": "This email is already registered",
+        "InvalidEmail": "The email format is invalid",
+        "PasswordTooShort": "Password is too short",
+        "PasswordRequiresDigit": "Password must contain at least one digit",
+        "PasswordRequiresLower": "Password must contain at least one lowercase letter",
+        "PasswordRequiresUpper": "Password must contain at least one uppercase letter",
+        "PasswordRequiresNonAlphanumeric": "Password must contain at least one special character",
+        "PasswordRequiresUniqueChars": "Password does not contain enough unique characters",
+        "generic": "Something went wrong while creating the user"
+      }
     }
   },
   "statistics": {
