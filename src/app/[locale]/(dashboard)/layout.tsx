@@ -7,6 +7,7 @@ import { AuthGuard } from "@features/auth/components/auth-guard";
 import { useAuth } from "@features/auth/lib/auth-context";
 import { useHasRole } from "@features/auth/lib/use-has-role";
 import { useLogout } from "@features/auth/hooks/use-logout";
+import type { Role } from "@shared/types/enums";
 import { LanguageSwitcher } from "@/shared/components/language-switcher";
 import { ThemeToggle } from "@/shared/components/theme-toggle";
 
@@ -15,6 +16,7 @@ function DashboardNav() {
   const { logout } = useAuth();
   const logoutMutation = useLogout();
   const isAdmin = useHasRole("Admin");
+  const canSeeClients = useHasRole(...(["Admin", "Manager", "Supervisor"] satisfies Role[]));
 
   function handleLogout() {
     // Client-side logout is immediate and unconditional; the network call is
@@ -32,6 +34,11 @@ function DashboardNav() {
         <Link href="/tasks" className="text-sm font-medium hover:underline">
           {t("tasks")}
         </Link>
+        {canSeeClients && (
+          <Link href="/clients" className="text-sm font-medium hover:underline">
+            {t("clients")}
+          </Link>
+        )}
         <Link href="/statistics" className="text-sm font-medium hover:underline">
           {t("statistics")}
         </Link>

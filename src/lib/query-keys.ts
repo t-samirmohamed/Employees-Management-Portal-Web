@@ -24,3 +24,11 @@ export const taskKeys = {
   details: () => [...taskKeys.all, "detail"] as const,
   detail: (id: number) => [...taskKeys.details(), id] as const,
 };
+
+export const clientKeys = {
+  all: ["clients"] as const,
+  lists: () => [...clientKeys.all, "list"] as const,
+  details: () => [...clientKeys.all, "detail"] as const,
+  detail: (id: number) => [...clientKeys.details(), id] as const,
+  visitStats: (id: number, range: string) => [...clientKeys.detail(id), "visit-stats", range] as const,
+};

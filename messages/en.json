@@ -19,6 +19,7 @@
   "nav": {
     "employees": "Employees",
     "tasks": "Tasks",
+    "clients": "Clients",
     "statistics": "Statistics",
     "users": "Users",
     "logout": "Log out",
@@ -204,6 +205,39 @@
       "edited": "edited",
       "confirmDeleteTitle": "Delete comment",
       "confirmDeleteDescription": "Are you sure you want to delete this comment?"
+    }
+  },
+  "clients": {
+    "list": {
+      "title": "Clients",
+      "createNew": "Add client",
+      "noResults": "No clients found"
+    },
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "contact": "Contact",
+      "noLocations": "No locations"
+    },
+    "create": {
+      "title": "Add client",
+      "submit": "Create",
+      "success": "Client created successfully",
+      "locations": "Locations",
+      "addLocation": "Add location"
+    },
+    "detail": {
+      "back": "Back to clients",
+      "locations": "Locations"
+    },
+    "visitStats": {
+      "title": "Visits",
+      "ranges": {
+        "month": "1 month",
+        "3month": "3 months",
+        "6month": "6 months",
+        "year": "1 year"
+      }
     }
   },
   "users": {

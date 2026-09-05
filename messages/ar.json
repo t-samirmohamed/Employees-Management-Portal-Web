@@ -19,6 +19,7 @@
   "nav": {
     "employees": "الموظفون",
     "tasks": "المهام",
+    "clients": "العملاء",
     "statistics": "الإحصائيات",
     "users": "المستخدمون",
     "logout": "تسجيل الخروج",
@@ -204,6 +205,39 @@
       "edited": "مُعدَّل",
       "confirmDeleteTitle": "حذف التعليق",
       "confirmDeleteDescription": "هل أنت متأكد من رغبتك في حذف هذا التعليق؟"
+    }
+  },
+  "clients": {
+    "list": {
+      "title": "العملاء",
+      "createNew": "إضافة عميل",
+      "noResults": "لا يوجد عملاء"
+    },
+    "fields": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "contact": "جهة الاتصال",
+      "noLocations": "لا توجد مواقع"
+    },
+    "create": {
+      "title": "إضافة عميل",
+      "submit": "إنشاء",
+      "success": "تم إنشاء العميل بنجاح",
+      "locations": "المواقع",
+      "addLocation": "إضافة موقع"
+    },
+    "detail": {
+      "back": "العودة إلى العملاء",
+      "locations": "المواقع"
+    },
+    "visitStats": {
+      "title": "الزيارات",
+      "ranges": {
+        "month": "شهر واحد",
+        "3month": "3 أشهر",
+        "6month": "6 أشهر",
+        "year": "سنة واحدة"
+      }
     }
   },
   "users": {
