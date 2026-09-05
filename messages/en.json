@@ -19,6 +19,7 @@
   "nav": {
     "employees": "Employees",
     "tasks": "Tasks",
+    "visits": "Visits",
     "clients": "Clients",
     "statistics": "Statistics",
     "users": "Users",
@@ -205,6 +206,46 @@
       "edited": "edited",
       "confirmDeleteTitle": "Delete comment",
       "confirmDeleteDescription": "Are you sure you want to delete this comment?"
+    }
+  },
+  "visits": {
+    "list": {
+      "title": "Visits",
+      "createNew": "Add visit",
+      "noResults": "No visits found"
+    },
+    "views": {
+      "list": "List",
+      "calendar": "Calendar",
+      "kanban": "Kanban"
+    },
+    "fields": {
+      "dateTime": "Date & time",
+      "client": "Client",
+      "location": "Location",
+      "assignee": "Assignee",
+      "pickClient": "Select a client",
+      "pickLocation": "Select a location",
+      "pickAssignee": "Select an employee",
+      "visitDate": "Visit date",
+      "visitTime": "Visit time",
+      "pickDate": "Pick a date",
+      "name": "Name",
+      "namePlaceholder": "Optional — defaults to the visit date if left blank",
+      "notes": "Notes"
+    },
+    "create": {
+      "title": "Add visit",
+      "submit": "Create",
+      "success": "Visit created successfully",
+      "serverErrors": {
+        "locationMismatch": "This location does not belong to the selected client",
+        "concurrentVisit": "This employee already has another accepted visit that isn't done yet"
+      }
+    },
+    "detail": {
+      "back": "Back to visits",
+      "viewTask": "View linked task"
     }
   },
   "clients": {

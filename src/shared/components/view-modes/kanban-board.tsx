@@ -6,24 +6,27 @@ import type { ScheduledItem } from "@/shared/components/view-modes/types";
 
 export type KanbanColumn = { key: string; label: string };
 
-function KanbanCard({ item }: { item: ScheduledItem }) {
+function KanbanCard({ item, readOnly }: { item: ScheduledItem; readOnly: boolean }) {
+  // Always called (rules of hooks) even when readOnly — its listeners/attributes
+  // are simply not spread onto the element in that case, so the card renders as
+  // plain, non-draggable content.
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({ id: item.id });
   return (
     <div
-      ref={setNodeRef}
-      {...listeners}
-      {...attributes}
+      ref={readOnly ? undefined : setNodeRef}
+      {...(readOnly ? {} : listeners)}
+      {...(readOnly ? {} : attributes)}
       style={
-        transform
+        !readOnly && transform
           ? { transform: `translate(${transform.x}px, ${transform.y}px)`, zIndex: 10 }
           : undefined
       }
-      className="cursor-grab rounded-md border bg-card p-2 text-sm shadow-sm active:cursor-grabbing"
+      className={`rounded-md border bg-card p-2 text-sm shadow-sm ${readOnly ? "" : "cursor-grab active:cursor-grabbing"}`}
     >
       <Link
         href={item.href}
         className="hover:underline"
-        onClick={(e) => isDragging && e.preventDefault()}
+        onClick={(e) => !readOnly && isDragging && e.preventDefault()}
       >
         {item.title}
       </Link>
@@ -31,16 +34,25 @@ function KanbanCard({ item }: { item: ScheduledItem }) {
   );
 }
 
-function KanbanColumnDropZone({ column, items }: { column: KanbanColumn; items: ScheduledItem[] }) {
+function KanbanColumnDropZone({
+  column,
+  items,
+  readOnly,
+}: {
+  column: KanbanColumn;
+  items: ScheduledItem[];
+  readOnly: boolean;
+}) {
+  // Same always-call-the-hook, ignore-the-output-when-readOnly shape as KanbanCard.
   const { setNodeRef, isOver } = useDroppable({ id: column.key });
   return (
     <div
-      ref={setNodeRef}
-      className={`flex min-h-48 flex-col gap-2 rounded-md border p-2 ${isOver ? "bg-accent" : ""}`}
+      ref={readOnly ? undefined : setNodeRef}
+      className={`flex min-h-48 flex-col gap-2 rounded-md border p-2 ${!readOnly && isOver ? "bg-accent" : ""}`}
     >
       <h3 className="text-sm font-medium">{column.label}</h3>
       {items.map((item) => (
-        <KanbanCard key={item.id} item={item} />
+        <KanbanCard key={item.id} item={item} readOnly={readOnly} />
       ))}
     </div>
   );
@@ -54,12 +66,15 @@ export function KanbanBoard({
   columns,
   items,
   onDrop,
+  readOnly = false,
 }: {
   columns: KanbanColumn[];
   items: ScheduledItem[];
-  onDrop: (itemId: number, fromStatus: string, toStatus: string) => void;
+  onDrop?: (itemId: number, fromStatus: string, toStatus: string) => void;
+  readOnly?: boolean;
 }) {
   function handleDragEnd(event: DragEndEvent) {
+    if (readOnly || !onDrop) return;
     const { active, over } = event;
     if (!over) return;
     const item = items.find((i) => i.id === active.id);
@@ -77,6 +92,7 @@ export function KanbanBoard({
             key={column.key}
             column={column}
             items={items.filter((item) => item.statusKey === column.key)}
+            readOnly={readOnly}
           />
         ))}
       </div>

@@ -45,7 +45,10 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
     if (res.status === 400 && data?.errors) {
       throw new ValidationApiError(data.title ?? "Validation failed", res.status, data.errors);
     }
-    throw new ApiError(data?.title ?? `Request failed (${res.status})`, res.status);
+    // Many endpoints throw TypedResults.BadRequest("some message") — a bare JSON
+    // string body, not an object with .title. Use it directly when that's the shape.
+    const message = typeof data === "string" ? data : (data?.title ?? `Request failed (${res.status})`);
+    throw new ApiError(message, res.status);
   }
 
   return data as T;

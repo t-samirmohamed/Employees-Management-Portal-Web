@@ -18,7 +18,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useRouter } from "@/i18n/navigation";
 import { useCreateTask } from "@features/tasks/hooks/use-create-task";
-import { useEmployeeLookup } from "@features/tasks/hooks/use-employee-lookup";
+import { useEmployeeLookup } from "@/shared/hooks/use-employee-lookup";
 import { buildCreateTaskSchema, type CreateTaskInput } from "@features/tasks/schemas/create-task.schema";
 
 export function TaskForm() {

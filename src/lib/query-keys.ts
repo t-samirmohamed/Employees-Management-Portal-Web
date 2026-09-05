@@ -25,6 +25,14 @@ export const taskKeys = {
   detail: (id: number) => [...taskKeys.details(), id] as const,
 };
 
+export const visitKeys = {
+  all: ["visits"] as const,
+  lists: () => [...visitKeys.all, "list"] as const,
+  list: () => [...visitKeys.lists()] as const,
+  details: () => [...visitKeys.all, "detail"] as const,
+  detail: (id: number) => [...visitKeys.details(), id] as const,
+};
+
 export const clientKeys = {
   all: ["clients"] as const,
   lists: () => [...clientKeys.all, "list"] as const,

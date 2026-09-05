@@ -14,7 +14,7 @@ import { useTask } from "@features/tasks/hooks/use-task";
 import { useAcceptTask } from "@features/tasks/hooks/use-accept-task";
 import { useCancelTask } from "@features/tasks/hooks/use-cancel-task";
 import { useCompleteTask } from "@features/tasks/hooks/use-complete-task";
-import { useEmployeeLookup } from "@features/tasks/hooks/use-employee-lookup";
+import { useEmployeeLookup } from "@/shared/hooks/use-employee-lookup";
 import { TaskStatusBadge } from "@features/tasks/components/task-status-badge";
 import { TaskComments } from "@features/tasks/components/task-comments";
 import { RejectTaskDialog } from "@features/tasks/components/reject-task-dialog";

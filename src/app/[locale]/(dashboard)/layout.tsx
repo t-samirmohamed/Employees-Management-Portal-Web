@@ -10,6 +10,8 @@ import { useLogout } from "@features/auth/hooks/use-logout";
 import type { Role } from "@shared/types/enums";
 import { LanguageSwitcher } from "@/shared/components/language-switcher";
 import { ThemeToggle } from "@/shared/components/theme-toggle";
+import { useEmployeeLookup } from "@/shared/hooks/use-employee-lookup";
+import { AttendanceBadge } from "@features/employees/components/enum-badge";
 
 function DashboardNav() {
   const t = useTranslations("nav");
@@ -17,6 +19,7 @@ function DashboardNav() {
   const logoutMutation = useLogout();
   const isAdmin = useHasRole("Admin");
   const canSeeClients = useHasRole(...(["Admin", "Manager", "Supervisor"] satisfies Role[]));
+  const { currentEmployee } = useEmployeeLookup();
 
   function handleLogout() {
     // Client-side logout is immediate and unconditional; the network call is
@@ -34,6 +37,9 @@ function DashboardNav() {
         <Link href="/tasks" className="text-sm font-medium hover:underline">
           {t("tasks")}
         </Link>
+        <Link href="/visits" className="text-sm font-medium hover:underline">
+          {t("visits")}
+        </Link>
         {canSeeClients && (
           <Link href="/clients" className="text-sm font-medium hover:underline">
             {t("clients")}
@@ -49,6 +55,7 @@ function DashboardNav() {
         )}
       </nav>
       <div className="flex items-center gap-2">
+        {currentEmployee && <AttendanceBadge value={currentEmployee.attendanceStatus} />}
         <LanguageSwitcher />
         <ThemeToggle />
         <Button variant="ghost" size="sm" onClick={handleLogout}>

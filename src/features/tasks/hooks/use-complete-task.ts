@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { taskKeys } from "@/lib/query-keys";
+import { employeeKeys, taskKeys } from "@/lib/query-keys";
 import type { TaskDetail, TaskDetailResponse } from "@features/tasks/types/task.types";
 
 export function useCompleteTask() {
@@ -12,6 +12,9 @@ export function useCompleteTask() {
         prev ? { ...prev, task: data } : prev
       );
       queryClient.invalidateQueries({ queryKey: taskKeys.lists() });
+      // Completing an AttendanceRequired task recalculates the assignee's
+      // AttendanceStatus server-side — keep the employees list in sync.
+      queryClient.invalidateQueries({ queryKey: employeeKeys.lists() });
     },
   });
 }

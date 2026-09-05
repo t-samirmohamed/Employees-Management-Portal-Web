@@ -19,6 +19,7 @@
   "nav": {
     "employees": "الموظفون",
     "tasks": "المهام",
+    "visits": "الزيارات",
     "clients": "العملاء",
     "statistics": "الإحصائيات",
     "users": "المستخدمون",
@@ -205,6 +206,46 @@
       "edited": "مُعدَّل",
       "confirmDeleteTitle": "حذف التعليق",
       "confirmDeleteDescription": "هل أنت متأكد من رغبتك في حذف هذا التعليق؟"
+    }
+  },
+  "visits": {
+    "list": {
+      "title": "الزيارات",
+      "createNew": "إضافة زيارة",
+      "noResults": "لا توجد زيارات"
+    },
+    "views": {
+      "list": "قائمة",
+      "calendar": "تقويم",
+      "kanban": "كانبان"
+    },
+    "fields": {
+      "dateTime": "التاريخ والوقت",
+      "client": "العميل",
+      "location": "الموقع",
+      "assignee": "المكلّف",
+      "pickClient": "اختر عميلًا",
+      "pickLocation": "اختر موقعًا",
+      "pickAssignee": "اختر موظفًا",
+      "visitDate": "تاريخ الزيارة",
+      "visitTime": "وقت الزيارة",
+      "pickDate": "اختر تاريخًا",
+      "name": "الاسم",
+      "namePlaceholder": "اختياري — يُستخدم تاريخ الزيارة افتراضيًا إذا تُرك فارغًا",
+      "notes": "ملاحظات"
+    },
+    "create": {
+      "title": "إضافة زيارة",
+      "submit": "إنشاء",
+      "success": "تم إنشاء الزيارة بنجاح",
+      "serverErrors": {
+        "locationMismatch": "هذا الموقع لا ينتمي إلى العميل المحدد",
+        "concurrentVisit": "لدى هذا الموظف زيارة مقبولة أخرى لم تكتمل بعد"
+      }
+    },
+    "detail": {
+      "back": "العودة إلى الزيارات",
+      "viewTask": "عرض المهمة المرتبطة"
     }
   },
   "clients": {
