@@ -21,7 +21,7 @@ export default function LeavesPage() {
   const myHighlightId = myRequestIdParam ? Number(myRequestIdParam) : null;
   const { data: leaves, isLoading } = useLeaves();
   const { getName, currentEmployeeId } = useEmployeeLookup();
-  const canSubmit = useHasRole("Employee", "Manager", "Supervisor");
+  const canSubmit = useHasRole("Admin", "Employee", "Manager", "Supervisor");
   const isApprover = useHasRole("Admin", "Manager", "Supervisor");
   const [createOpen, setCreateOpen] = useState(false);
 

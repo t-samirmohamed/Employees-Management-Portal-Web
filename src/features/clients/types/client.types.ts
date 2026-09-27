@@ -29,6 +29,12 @@ export type CreateLocationRequest = {
   contact: string;
 };
 
+export type UpdateClientRequest = {
+  name: string;
+  email: string;
+  contact: string;
+};
+
 export type CreateClientRequest = {
   name: string;
   email: string;

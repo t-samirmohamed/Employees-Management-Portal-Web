@@ -22,11 +22,14 @@
     "visits": "Visits",
     "leaves": "Leaves",
     "clients": "Clients",
-    "statistics": "Statistics",
+    "dashboard": "Dashboard",
     "users": "Users",
     "logout": "Log out",
     "login": "Log in",
-    "signup": "Sign up"
+    "signup": "Sign up",
+    "collapseMenu": "Collapse menu",
+    "expandMenu": "Expand menu",
+    "openMenu": "Open menu"
   },
   "auth": {
     "login": {
@@ -292,6 +295,7 @@
       "client": "Client",
       "location": "Location",
       "assignee": "Assignee",
+      "status": "Status",
       "pickClient": "Select a client",
       "pickLocation": "Select a location",
       "pickAssignee": "Select an employee",
@@ -334,6 +338,17 @@
       "success": "Client created successfully",
       "locations": "Locations",
       "addLocation": "Add location"
+    },
+    "edit": {
+      "button": "Edit client",
+      "title": "Edit client",
+      "submit": "Save",
+      "success": "Client updated successfully"
+    },
+    "addLocation": {
+      "title": "Add location",
+      "submit": "Add",
+      "success": "Location added successfully"
     },
     "detail": {
       "back": "Back to clients",
@@ -383,7 +398,7 @@
     }
   },
   "statistics": {
-    "title": "Statistics",
+    "title": "Dashboard",
     "totalEmployees": "Total employees",
     "byGender": "By gender",
     "byStatus": "By status",

@@ -22,11 +22,14 @@
     "visits": "الزيارات",
     "leaves": "الإجازات",
     "clients": "العملاء",
-    "statistics": "الإحصائيات",
+    "dashboard": "لوحة التحكم",
     "users": "المستخدمون",
     "logout": "تسجيل الخروج",
     "login": "تسجيل الدخول",
-    "signup": "إنشاء حساب"
+    "signup": "إنشاء حساب",
+    "collapseMenu": "طي القائمة",
+    "expandMenu": "توسيع القائمة",
+    "openMenu": "فتح القائمة"
   },
   "auth": {
     "login": {
@@ -292,6 +295,7 @@
       "client": "العميل",
       "location": "الموقع",
       "assignee": "المكلّف",
+      "status": "الحالة",
       "pickClient": "اختر عميلًا",
       "pickLocation": "اختر موقعًا",
       "pickAssignee": "اختر موظفًا",
@@ -334,6 +338,17 @@
       "success": "تم إنشاء العميل بنجاح",
       "locations": "المواقع",
       "addLocation": "إضافة موقع"
+    },
+    "edit": {
+      "button": "تعديل العميل",
+      "title": "تعديل العميل",
+      "submit": "حفظ",
+      "success": "تم تحديث العميل بنجاح"
+    },
+    "addLocation": {
+      "title": "إضافة موقع",
+      "submit": "إضافة",
+      "success": "تمت إضافة الموقع بنجاح"
     },
     "detail": {
       "back": "العودة إلى العملاء",
@@ -383,7 +398,7 @@
     }
   },
   "statistics": {
-    "title": "الإحصائيات",
+    "title": "لوحة التحكم",
     "totalEmployees": "إجمالي الموظفين",
     "byGender": "حسب الجنس",
     "byStatus": "حسب الحالة",

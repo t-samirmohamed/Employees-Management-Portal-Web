@@ -11,7 +11,7 @@ import type { Role } from "@shared/types/enums";
 // already handled one layer up; this only decides role sufficiency.
 export function RequireRole({
   roles,
-  redirectTo = "/employees",
+  redirectTo = "/dashboard",
   children,
 }: {
   roles: Role[];

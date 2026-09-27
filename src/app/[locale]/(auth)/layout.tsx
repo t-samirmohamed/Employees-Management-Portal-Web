@@ -12,7 +12,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     if (!isInitializing && isAuthenticated) {
-      router.replace("/employees");
+      router.replace("/dashboard");
     }
   }, [isInitializing, isAuthenticated, router]);
 

@@ -60,7 +60,7 @@ export function SignupForm() {
     signup.mutate(payload, {
       onSuccess: (data) => {
         setSession({ token: data.token, expiresAtUtc: data.expiresAtUtc, email: values.email });
-        router.push("/employees");
+        router.push("/dashboard");
       },
       onError: (error) => {
         if (error instanceof ValidationApiError) {

@@ -9,7 +9,7 @@ export default async function NotFound() {
     <div className="flex min-h-svh flex-col items-center justify-center gap-4 p-8 text-center">
       <p className="text-lg text-muted-foreground">{t("errors.notFound")}</p>
       <Button asChild>
-        <Link href="/employees">{t("common.back")}</Link>
+        <Link href="/dashboard">{t("common.back")}</Link>
       </Button>
     </div>
   );

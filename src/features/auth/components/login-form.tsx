@@ -43,7 +43,7 @@ export function LoginForm() {
     login.mutate(values, {
       onSuccess: (data) => {
         setSession({ token: data.token, expiresAtUtc: data.expiresAtUtc, email: values.email });
-        router.push("/employees");
+        router.push("/dashboard");
       },
       onError: (error) => {
         if (error instanceof UnauthorizedError) {

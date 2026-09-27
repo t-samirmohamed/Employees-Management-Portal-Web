@@ -10,7 +10,7 @@ import { StatusStatsCard } from "@features/statistics/components/status-stats-ca
 import { MostVisitedClientsCard } from "@features/statistics/components/most-visited-clients-card";
 import { SupervisorTeamStatsTable } from "@features/statistics/components/supervisor-team-stats-table";
 
-export default function StatisticsPage() {
+export default function DashboardPage() {
   const t = useTranslations("statistics");
   const { data, isLoading } = useEmployeeStatistics();
   const canSeeStatusStats = useHasRole("Admin", "Manager", "Supervisor");

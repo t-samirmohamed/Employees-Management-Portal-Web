@@ -45,7 +45,7 @@ Code is organized by feature under `src/features/<feature>/`, each with its own 
 
 ### Routing & i18n
 
-Locale-prefixed routes under `src/app/[locale]/`, driven by `next-intl` (`src/i18n/routing.ts` defines `locales: ["en", "ar"]`, default `en`). Route groups: `(auth)` for `/login`, `/signup`; `(dashboard)` for the authenticated app (`/employees`, `/statistics`), gated by `AuthGuard`. Translation strings live in `messages/en.json` / `messages/ar.json`. Arabic renders RTL (`dir` is set from locale in `[locale]/layout.tsx`).
+Locale-prefixed routes under `src/app/[locale]/`, driven by `next-intl` (`src/i18n/routing.ts` defines `locales: ["en", "ar"]`, default `en`). Route groups: `(auth)` for `/login`, `/signup`; `(dashboard)` for the authenticated app (`/dashboard` — the post-login landing page — `/employees`, etc.), gated by `AuthGuard`. Translation strings live in `messages/en.json` / `messages/ar.json`. Arabic renders RTL (`dir` is set from locale in `[locale]/layout.tsx`).
 
 `[locale]/[...rest]/page.tsx` is a deliberate catch-all that calls `notFound()` from *inside* the `[locale]` tree — without it, unmatched paths skip the locale tree and fall back to the untranslated root `not-found.tsx` instead of the translated nested one.
 
